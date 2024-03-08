@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_package = "org.instancio.test.prototobuf";
+option java_outer_classname = "Proto";
+
+message Person {
+  string name = 1;
+  int32 age = 2;
+  Gender gender = 3;
+  Address address = 4;
+  map<string, string> attributes = 5;
+}
+
+message Address {
+  string street = 1;
+  string city = 2;
+  string country = 3;
+  repeated Phone phone_numbers = 4;
+}
+
+message Phone {
+  string country_code = 1;
+  string number = 2;
+}
+
+enum Gender {
+  MALE = 0;
+  FEMALE = 1;
+  OTHER = 2;
+}
